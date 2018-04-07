@@ -2,19 +2,64 @@
 <html>
 <head>
 	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<title>Testing</title>
 </head>
 <body>
-	<center>
-		<button type="button" class="btn btn-success" onclick="showAlert()">Success!</button>
-	</center>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+      			<a class="nav-link" href="#">Home</a>
+    		</li>
+    		<li class="nav-item">
+      			<a class="nav-link" href="#">About</a>
+    		</li>
+    		<li class="nav-item">
+      			<a class="nav-link" href="#">Contact</a>
+    		</li>
+  		</ul>
+	</nav>
+
+	
+	<div style="margin-top:80px" class="btn-group btn-group-lg">
+		<button type="button" class="btn btn-success" onclick="showAlert()">See greeting!</button>
+
+		<button style="display:inline-block" type="button" class="btn btn-primary" onclick="goFacebook()">
+		Look at my Facebook!
+		</button>
+	</div>
+	
+	<div align="center">
+		<h3>Add 2 Numbers</h3>
+		
+		<input type="number" id="n1"></br>
+		<input type="number" id="n2"></br>
+		<button style="margin-top: 10px;margin-bottom: 10px;" class="btn btn-info" onclick="add()">Add them</button>
+
+		<p id="answer"></p>
+	</div>
 	<script>
 		function showAlert(){
 			alert("Welcome!");
+		}
+
+		function goFacebook(){
+			window.location="https://www.facebook.com/sahanhirantha";
+		}
+
+		function add(){
+
+			var a = document.getElementById("n1").value;
+			var b = document.getElementById("n2").value;
+
+			var sum = parseInt(a) + parseInt(b);
+
+			document.getElementById("answer").innerHTML = `The Answer is ${sum}`;
 		}
 	</script>
 
