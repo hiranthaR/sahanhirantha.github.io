@@ -60,6 +60,11 @@
 			var sum = parseInt(a) + parseInt(b);
 
 			document.getElementById("answer").innerHTML = `The Answer is ${sum}`;
+			setTimeout(clearText,3000);
+		}
+
+		function clearText(){
+			document.getElementById("answer").innerHTML = '';
 		}
 	</script>
 
