@@ -58,9 +58,12 @@
 			var a = document.getElementById("n1").value;
 			var b = document.getElementById("n2").value;
 
-			var sum = parseInt(a) + parseInt(b);
-
-			document.getElementById("answer").innerHTML = `The sum is ${sum}`;
+			if (isNaN(a) || isNaN(b)){
+				document.getElementById("answer").innerHTML = 'Error:cannot add texts!';
+			} else {
+				var sum = parseInt(a) + parseInt(b);
+				document.getElementById("answer").innerHTML = `The sum is ${sum}`;
+			}
 			setTimeout(clearText,3000);
 		}
 
